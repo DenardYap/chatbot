@@ -1,0 +1,5 @@
+data.json: add transcript, math questions, etc
+train.py: with the way I split the data now it might have uneven splits and lead to an inaccurate model. Since we have so little data
+          Maybe cosnidering dedicate the whole data.json as training data and create another separate test set.
+
+Create a validation set and stuff
