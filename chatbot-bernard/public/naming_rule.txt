@@ -1,0 +1,5 @@
+# This is the naming rule for my mp3 files
+
+0. lower case
+1. no special characters except spacebar (e.g. what's good = whats good)
+2. copy anything with a "s" at the end and add another file with "is" (e.g. whats good -> what is good)

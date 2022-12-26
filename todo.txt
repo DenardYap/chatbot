@@ -3,3 +3,24 @@ train.py: with the way I split the data now it might have uneven splits and lead
           Maybe cosnidering dedicate the whole data.json as training data and create another separate test set.
 
 Create a validation set and stuff
+
+Figure out how to not answer questions that we are not trained on
+Add Context, like a state-machine
+
+Fix the stemmer in js is different from the one in Python 
+- Possible solutions
+1) MOST TEDIOUS
+- make a backend to only python or javascript
+2) Find the same algorithm 
+
+TODO:
+1) Voice OVer
+2) Find out why model is so underfit
+- ("maybe because stemming algorithm is diff?")
+3) Figure out how to not answer questions or at least try to mitigate that
+4) Fix stemming algorithm issue ✓
+5) Add Context
+6) Add UI and stuff
+7) Encode numbers as numbers, not text
+8) Remove punctuations from the transcript
+

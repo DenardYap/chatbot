@@ -1,0 +1,37 @@
+{
+    "validation": [
+        {  
+        "text": "Hi",
+        "intent": "Greeting"
+        },
+        {  
+        "text": "hello there",
+        "intent": "Greeting"
+        },
+        {  
+        "text": "hello bernard",
+        "intent": "Greeting"
+        },
+        {  
+        "text": "Hiiii",
+        "intent": "Greeting"
+        },
+        {  
+        "X": "Hi Bernard",
+        "intent": "Greeting"
+        },
+        {  
+        "text": "How are you doing?",
+        "intent": "CourtesyGreeting"
+        },
+        {  
+        "text": "How you doing?",
+        "intent": "CourtesyGreeting"
+        },
+        {  
+        "text": "What's good??",
+        "intent": "CourtesyGreeting"
+        }
+    
+    ]
+}
