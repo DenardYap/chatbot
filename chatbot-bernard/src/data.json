@@ -521,6 +521,7 @@
             { 
                   "intent": "Clever",
                   "text": [
+                        "You are very smart",
                         "You are very clever",
                         "You are a very clever boy",
                         "You are a genius boy",
@@ -708,7 +709,7 @@
                         "What's your hobby?"
                   ],
                   "responses": [
-                        "I am a Data Science student from the University of Michigan with an ambition in Machine Learning. I love making stuff every since I was a kid, from lego, to minecraft, to Arduino, and to now - Machine Learning! Seeing what I makes work make me feel really good!",
+                        "I am a Data Science student from the University of Michigan with an ambition in Machine Learning. I love making stuff every since I was a kid, seeing what I makes work makes me feel really good!",
                         "In my free time, I LOVE weightlifting! I work out roughly 10 hours a week pretty consistently.",
                         "I would say my greatest strength is I try really hard and I never give up. There's always a way out",
                         "I like to work on projects and learn new technology in my free time, like this chatbot application! It makes me feel fulfilled and meaningful."
