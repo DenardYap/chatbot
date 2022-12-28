@@ -1,4 +1,4 @@
-Link to the app: <a src="https://chatbot-mu-seven.vercel.app/">https://chatbot-mu-seven.vercel.app/</a>
+Link to the app: <a src="https://chatbot-mu-seven.vercel.app/" target="_blank">https://chatbot-mu-seven.vercel.app/</a>
 
 I built a simple talking chatbot with my own voice! His name is Bernard (duh) and if you talk to him, he will respond to you!
 
