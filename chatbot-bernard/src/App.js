@@ -198,6 +198,11 @@ function App() {
   
   return (
     <div className="flex flex-col justify-evenly h-screen items-center">
+      <div className='absolute left-2 top-2'>
+
+      <div className=' text-[0.75em] underline'>Bernard Chatbot 1.0</div>
+        <div className=' text-[0.6em]'>Developed and designed by Bernard Yap</div>
+      </div>
       <div className=''>
 
         <div className='flex justify-center items-center pt-5 relative  '>
