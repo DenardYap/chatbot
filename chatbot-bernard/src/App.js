@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import { useEffect, useState } from 'react';

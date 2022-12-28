@@ -1,8 +1,4 @@
 // script to convert my speech to input for my model
-
-import { train, unique } from "@tensorflow/tfjs";
-// import {stemmer} from "porter-stemmer"
-import {stemmer} from 'https://esm.sh/stemmer@2'
 import  * as tf from "@tensorflow/tfjs"
 import training_data from './data.json';
 
