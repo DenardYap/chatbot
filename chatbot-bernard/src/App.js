@@ -5,15 +5,19 @@ import  * as tf from "@tensorflow/tfjs"
 import word_hash from './word_hash.json';
 import {convertSpeech, getResponses} from "./helper.js"; 
 import { IoMicCircleOutline, IoMicOffCircleOutline } from "react-icons/io5";
-
+import animation0 from "./animation/animation0.png"
+import animation1 from "./animation/animation1.png"
+import animation2 from "./animation/animation2.png"
+import animation3 from "./animation/animation3.png"
+import animation4 from "./animation/animation4.png"
 const HIDDEN_SIZE = 8;
 
 const ANIMATION_LIST = [
-  "/public/animation/animation0.png",
-  "/public/animation/animation1.png",
-  "/public/animation/animation2.png",
-  "/public/animation/animation3.png",
-  "/public/animation/animation4.png"
+  animation0,
+  animation1,
+  animation2,
+  animation3,
+  animation4
 ]
 const PROBABILITY_THRESHOLD = 0.75;
 
