@@ -9,11 +9,11 @@ import { IoMicCircleOutline, IoMicOffCircleOutline } from "react-icons/io5";
 const HIDDEN_SIZE = 8;
 
 const ANIMATION_LIST = [
-  "/animation/animation0.png",
-  "/animation/animation1.png",
-  "/animation/animation2.png",
-  "/animation/animation3.png",
-  "/animation/animation4.png"
+  "/public/animation/animation0.png",
+  "/public/animation/animation1.png",
+  "/public/animation/animation2.png",
+  "/public/animation/animation3.png",
+  "/public/animation/animation4.png"
 ]
 const PROBABILITY_THRESHOLD = 0.75;
 
