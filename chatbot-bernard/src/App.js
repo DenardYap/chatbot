@@ -5,9 +5,18 @@ import { useEffect, useState } from 'react';
 import  * as tf from "@tensorflow/tfjs"
 import word_hash from './word_hash.json';
 import {convertSpeech, getResponses} from "./helper.js"; 
+import { IoMicCircleOutline, IoMicOffCircleOutline } from "react-icons/io5";
+
 const HIDDEN_SIZE = 8;
 
-const PROBABILITY_THRESHOLD = 0.6;
+const ANIMATION_LIST = [
+  "/animation/animation0.png",
+  "/animation/animation1.png",
+  "/animation/animation2.png",
+  "/animation/animation3.png",
+  "/animation/animation4.png"
+]
+const PROBABILITY_THRESHOLD = 0.75;
 
 const wordSet = new Set(
   ['{', "'", '`', '"', ']', '-', '/', ':', '!', ')', '@', '\\', '*', '~', '#', '(', '%', '_', '.', '^', ',', '>', '}', '[', '=', '+', '&', '?', '|', '<', '$', ';']
@@ -36,7 +45,46 @@ function App() {
   const [reply, setReply] = useState(null);
   const [model, setModel] = useState(null);
   const [responses, setResponses] = useState({});
+  const [currentAvatar, setCurrentAvatar] = useState(ANIMATION_LIST[0])
+  const [currentAvatarIndex, setCurrentAvatarIndex] = useState(0);
+  const [currentMedia, setCurrentMedia] = useState(null);
+  const [currentMediaPaused, setCurrentMediaPaused] = useState(true);
+  const [micOpen, setMicOpen] = useState(false);
+  let interval; // initialize our interval object
+  // play animation
+  useEffect(() => {
+    if (currentMedia) {
 
+      interval = setInterval(()=>{
+        
+        if (currentMedia.paused){
+          setCurrentMediaPaused(true);
+        }
+        setCurrentAvatarIndex(prevState => (prevState + 1)%(ANIMATION_LIST.length));
+      }, 150)
+  
+      return () => {
+        clearInterval(interval);
+      }
+    }
+  }, [currentMediaPaused])
+
+  // effect to clean up 
+  useEffect(() => {
+
+    if (currentMedia){ 
+      if (currentMedia.paused) {
+        // media is paused
+        clearInterval(interval);
+        setCurrentAvatar(ANIMATION_LIST[0]);
+        setCurrentAvatarIndex(0);
+      }
+    }
+  }, [currentMediaPaused])
+
+  useEffect(() => {
+    setCurrentAvatar(ANIMATION_LIST[currentAvatarIndex]);
+  }, [currentAvatarIndex])
 
   // loading our model to predict responses
   useEffect(() =>{
@@ -58,6 +106,10 @@ function App() {
   // Make a prediction everytime the user done talking
   // a.k.a the mic closed either manually or automatically
   useEffect(() => {
+    if (!listening){
+      setMicOpen(false);
+
+    }
     if (transcript) {
       
       async function predict() {
@@ -77,13 +129,13 @@ function App() {
         console.log("Predicted value is", argMax, "with a probability of", probability)
         if (probability < PROBABILITY_THRESHOLD) {
           // not confidnet enough to answer
-          let random_responses = response_list[randomIntFromInterval(0, response_list.length)];
+          let random_responses = NOT_CONFIDENT_RESPONSES[randomIntFromInterval(0, NOT_CONFIDENT_RESPONSES.length - 1)];
           setReply(random_responses);
           playSound(random_responses.toLowerCase())
           return;
         }
         const response_list = responses[argMax];
-        let random_responses = response_list[randomIntFromInterval(0, response_list.length)];
+        let random_responses = response_list[randomIntFromInterval(0, response_list.length - 1)];
         setReply(random_responses);
         playSound(random_responses.toLowerCase())
           // play sounds
@@ -107,12 +159,34 @@ function App() {
       }
       return newStr
     }
+
+    useEffect(() => {
+      if (currentMedia){
+
+        currentMedia.play();
+        setCurrentMediaPaused(false);
+      }
+    }, [currentMedia])
+
     function playSound(mp3Name) {
 
       mp3Name = getRidOfPunctuation(mp3Name);
       console.log(mp3Name)
-      new Audio("/sound/" + mp3Name + ".mp3").play();
+      setCurrentMedia(new Audio("/sound/" + mp3Name + ".mp3"))
     }
+
+  function toggleMic() {
+    console.log("toggling")
+    if (micOpen) {
+      setMicOpen(false);
+      SpeechRecognition.stopListening();
+    } else{
+      setMicOpen(true);
+      SpeechRecognition.startListening();
+
+    }
+
+  }
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
@@ -121,24 +195,43 @@ function App() {
   }
   // TODO: Choose whether type or chat
 
+  
   return (
-    <div className="flex flex-col justify-evenly ">
-      <div className='flex justify-center pt-5'> 
+    <div className="flex flex-col justify-evenly h-screen items-center">
+      <div className=''>
 
-        <div className='flex justify-center text-center p-5 bg-red-400 rounded-md border-4 border-black bold text-3xl w-fit'>
+        <div className='flex justify-center items-center pt-5 relative  '>
+        <img src={currentAvatar}width={200} height={200}></img>
+          {
+            currentMediaPaused ? 
+            <></> 
+            :
+            <div class=" talk-bubble tri-right left-in">
+            <div class="talktext">
+              <p>{reply}</p>
+            </div>
+          </div>
+            
+          }
 
-          <p>Microphone: {listening ? 'on' : 'off'}</p>
         </div>
+        <div className='flex flex-row items-center justify-center mt-[1em]'>
+
+          <button className='' onClick={toggleMic}>
+            {micOpen ? 
+            <IoMicCircleOutline className='text-8xl '></IoMicCircleOutline>
+            :
+            <IoMicOffCircleOutline className='text-8xl '  color='red'></IoMicOffCircleOutline>}
+            </button>
+          </div>
+
       </div>
 
-        <div className='flex flex-row items-center justify-center h-full  '>
+      <div className='bg-slate-200 border border-black rounded-lg mx-[2em] p-3 w-[50%]'>
+            
+          <p> <b>You said:</b> {transcript}</p>
+      </div>
 
-          <button className='p-3 rounded bg-red-400 border-black border-2 bold text-2xl w-fit m-5' onClick={SpeechRecognition.startListening}>Start</button>
-          <button className='p-3 rounded bg-red-400 border-black border-2 bold text-2xl w-fit m-5'  onClick={SpeechRecognition.stopListening}>Stop</button>
-          <button className='p-3 rounded bg-red-400 border-black border-2 bold text-2xl w-fit m-5'  onClick={resetTranscript}>Reset</button>
-        </div>
-      <p>{transcript}</p>
-      <p>{reply}</p>
     </div>
   );
 }

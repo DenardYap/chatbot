@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "@tensorflow/tfjs": "^4.1.0",
-    "porter-stemmer": "^0.9.1"
+    "porter-stemmer": "^0.9.1",
+    "react-chat-bubble": "^0.8.7",
+    "react-chatbox-component": "^0.0.5",
+    "react-icons": "^4.7.1"
   }
 }
