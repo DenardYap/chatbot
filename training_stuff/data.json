@@ -661,7 +661,7 @@
                   "text": [
                         "Are you married?",
                         "Do you have a wife?",
-                        "Do you have a husband?"
+                        "Do you have a husband?"      
                   ],
                   "responses": [
                         "I am not married... yet"
@@ -772,7 +772,7 @@
                         "You wanna date a bot?",
                         "I am not sure if I am capable of that",
                         "How does this work?",
-                        "I can't I am a bot living in the internet, go get a real date."
+                        "I can't I am a bot living in the internet"
                   ],
                   "context":  {
                         "in": [],
@@ -814,10 +814,10 @@
                         "Are you reading my mind?"
                   ],
                   "responses": [
-                        "I wish I can",
-                        "Maybe one day",
-                        "I really can't, I am a bot!",
-                        "At least for now I am not physical enough to do that"
+                        "Told you I am smart",
+                        "I just know",
+                        "I read your mind!",
+                        "That's right"
                   ],
                   "context":  {
                         "in": [],
@@ -852,7 +852,7 @@
                         "Do you hear me"
                   ],
                   "responses": [
-                        "Yes I hear you loud and clear", 
+                        "Yes I heard you loud and clear!", 
                         "Yes I do",
                         "Yes I can"
                   ],
