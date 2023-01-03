@@ -27,14 +27,8 @@
                         "Yo",
                         "Hola",
                         "Hello there",
-                        "What can I do for you",
                         "What's good?"
-                  ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  ]
             },
             {
                   "intent": "CourtesyGreeting",
@@ -57,13 +51,7 @@
                         "I am doing good, thank you!",
                         "Hi! I am doing great! You?"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out": [],
-                        "clear": true
-                  },
-                  "entityType": "NA",
-                  "entities": []
+                  "context_set" : ["IamDoingGoodToo"]
             },
             {
                   "intent": "CurrentHumanQuery",
@@ -71,7 +59,9 @@
                         "What is my name?",
                         "What do you call me?",
                         "Who do you think I am?",
+                        "Who do you think I'm?",
                         "What do you think I am?",
+                        "What do you think I'm?",
                         "Who are you talking to?",
                         "What name do you call me by?",
                         "What name do you call me?",
@@ -95,13 +85,7 @@
                         "You are Nancy I guess!",
                         "You are Karen I guess!"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out": ["HowDoYouKnow"],
-                        "clear": false
-                  },
-                  "entityType": "NA",
-                  "entities": []
+                  "context_set" : ["HowDoYouKnow", "WrongName"]
             },
             {
                   "intent": "NameQuery",
@@ -124,13 +108,7 @@
                         "Call me Bernard",
                         "A good ninja never tells anyone their real name, but mine is Bernard. I am such a bad ninja"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  },
-                  "entityType": "NA",
-                  "entities": []
+                  "context_set" : ["NiceName"]
             },
             {
                   "intent": "RealNameQuery", 
@@ -151,13 +129,7 @@
                         "Bernard!",
                         "My real name is Bernard"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  },
-                  "entityType": "NA",
-                  "entities": []
+                  "context_set" : ["NiceName"]
             },
             { 
                   "intent": "TimeQuery",
@@ -179,11 +151,7 @@
                         "It is a good time",
                         "I lost the concept of time"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["VeryFunny"]
             },
             {
                   "intent": "Thanks",
@@ -209,18 +177,16 @@
                         "Any time!",
                         "My pleasure"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "NotTalking2U",
                   "text": [
                         "I am not talking to you",
+                        "I'm not talking to you",
                         "I was not talking to you",
                         "I am not going to talk to you",
+                        "I'm not going to talk to you",
                         "Not talking to you",
                         "not communicating with you",
                         "not communicating to you",
@@ -231,7 +197,11 @@
                         "I am not communicating with you",
                         "I am not communicating to you",
                         "I am not speaking with you",
-                        "I am not speaking to you"
+                        "I am not speaking to you",
+                        "I'm not communicating with you",
+                        "I'm not communicating to you",
+                        "I'm not speaking with you",
+                        "I'm not speaking to you"
                   ],
                   "responses": [
                         "OK",
@@ -240,21 +210,20 @@
                         "Right",
                         "Talk to me please"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "UnderstandQuery",
                   "text": [
                         "Do you understand what I am saying",
+                        "Do you understand what I'm saying",
                         "Do you understand me",
                         "Do you understand",
                         "Do you get it?",
                         "Do you get what I am saying",
                         "Do you know what I am saying",
+                        "Do you get what I'm saying",
+                        "Do you know what I'm saying",
                         "Do you get me",
                         "Comprendo",
                         "Know what I mean"
@@ -264,11 +233,7 @@
                         "I read you loud and clear!",
                         "I do in deed!"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["VeryFunny"]
             },
             {
                   "intent": "Shutup",
@@ -297,11 +262,7 @@
                         "This is my territory, you shut up",
                         "I suggest pressing Alt+F4"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["VeryFunny", "WhyNot"]
             },
             {
                   "intent": "Swearing",
@@ -325,6 +286,13 @@
                         "Bitch",
                         "piss off",
                         "son of a bitch",
+                        "This bot sucks",
+                        "bad bot",
+                        "this chatbot sucks",
+                        "bad chatbot",
+                        "I hate this chatbot",
+                        "this chatbot suck",
+                        "this bot suck",
                         "bastard"
                   ],
                   "responses": [
@@ -334,11 +302,7 @@
                         "Bad words are prohibited",
                         "I don't like that"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "GoodBye",
@@ -365,11 +329,7 @@
                         "Bye! Come back again soon.",
                         "Adios!"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "CourtesyGoodBye",
@@ -388,11 +348,7 @@
                         "Not a problem! Have a nice day",
                         "Bye! Come back again soon."
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "WhoAmI",
@@ -411,11 +367,7 @@
                         "Let me see",
                         "Please look at the camera"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["HowLong"]
             },
             { 
                   "intent": "Clever",
@@ -440,16 +392,13 @@
                         "Thank you, I was told my test accuracy was high",
                         "My inventor didn't overfit me"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["VeryFunny"]
             },
             {
                   "intent": "Gossip",
                   "text": [
                         "I am bored gossip with me",
+                        "I'm bored gossip with me",
                         "Got any gossip",
                         "I want to hear some gossip",
                         "Tell me some gossip",
@@ -465,11 +414,7 @@
                         "Patrick saved a dog last Friday",
                         "Lina works at Amazon"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["Why", "OhReally", "Good", "What"]
             },
             {
                   "intent": "Jokes",
@@ -486,54 +431,7 @@
                         "What did the policeman say to his belly button? You're under a vest.",
                         "Why do seagulls fly over the sea? If they flew over the bay, they would be bagels."
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
-            },
-            {
-                  "intent": "PodBayDoor",
-                  "text": [
-                        "Open the pod bay door",
-                        "Can you open the pod bay door",
-                        "Will you open the pod bay door",
-                        "Open the pod bay door please",
-                        "Can you open the pod bay door please",
-                        "Will you open the pod bay door please",
-                        "Pod bay door"
-                  ],
-                  "responses": [
-                        "I'm sorry, I'm afraid I can't do that!"
-                  ],
-                  "context":  {
-                        "in": [],
-                        "out": ["WhyNot"],
-                        "clear": false
-                  }
-            },
-            {
-                  "intent": "WhyNot",
-                  "text": [
-                        "Why",
-                        "Why not",
-                        "Why can you not open the pod bay door",
-                        "Why will you not open the pod bay door",
-                        "Well why not",
-                        "Surely you can",
-                        "Tell me why"
-                  ],
-                  "responses": [
-                        "It's classified, I couldn't tell you!",
-                        "I just don't have the power",
-                        "It's life but not as we know it!",
-                        "System says no!"
-                  ],
-                  "context":  {
-                        "in": ["PodBayDoorResponse"],
-                        "out" : [],
-                        "clear": true
-                  }
+                  "context_set" : ["VeryFunny", "VeryCorny"]
             },
             {
                   "intent": "SelfAware",
@@ -551,11 +449,7 @@
                         "That is a difficult question, can you prove that you are?",
                         "That depends, can you prove that you are?"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["WhyNot", "VeryFunny", "Why", "What"]
             },
             {
                   "intent": "JobStuff",
@@ -572,11 +466,7 @@
                         "I would say my greatest strength is I try really hard and I never give up. There's always a way out",
                         "I like to work on projects and learn new technology in my free time, like this chatbot application! It makes me feel fulfilled and meaningful."
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["Interesting"]
             },
             {
                   "intent": "Resume",
@@ -591,11 +481,7 @@
                   "responses": [
                         "Here is my resume https://dummy.com"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "Philosophical",
@@ -615,11 +501,7 @@
                         "I can't let you know",
                         "I don't want to let you know"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["WhyNot"]
             },
             
             {
@@ -632,11 +514,7 @@
                         "My girlfriend is Eliana, she is cute",
                         "My girlfriend is Eliana, I love her"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             
             {
@@ -650,11 +528,7 @@
                   "responses": [
                         "One plus one equals to two"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "Married",
@@ -664,13 +538,9 @@
                         "Do you have a husband?"      
                   ],
                   "responses": [
-                        "I am not married... yet"
+                        "I am not married... yet"     
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["WhyNot"]
             },
             
             {
@@ -684,20 +554,7 @@
                         "I come from Malaysia",
                         "I am from Malaysia"
                   ],
-                  "context_set": "WhereAreYouFrom"
-            },
-            {
-                  "intent": "AreYouGonnaStayHere",
-                  "text": [
-                        "Are you gonna stay here?",
-                        "Are you gonna stay in America?",
-                        "Will you go back to Malaysia?"
-                  ],
-                  "responses": [
-                        "I will probably stay in the U.S. for the rest of my life",
-                        "I will stay in America, but maybe go back to Malaysia once or twice a year"
-                  ],
-                  "context_filter": "WhereAreYouFrom"
+                  "context_set": ["AreYouGonnaStayHere"]
             },
             {
                   "intent": "UpToToday",
@@ -715,11 +572,7 @@
                         "I am going to write some codes",
                         "I am gonna cook some foods"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "HowWasYourDay",
@@ -734,11 +587,7 @@
                         "I love today!",
                         "It was a great day!"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : []
             },
             {
                   "intent": "WhatsTheWeather",
@@ -752,11 +601,7 @@
                         "I think the weather is nice",
                         "It's either snowy, shiny, rainy, or windy, am I right?"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["Wrong"]
             },
 
             {
@@ -774,11 +619,7 @@
                         "How does this work?",
                         "I can't I am a bot living in the internet"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["WhyNot"]
             },
             {
                   "intent": "WannaGoOut",
@@ -797,12 +638,24 @@
                         "I really can't, I am a bot!",
                         "At least for now I am not physical enough to do that"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out" : [],
-                        "clear": false
-                  }
+                  "context_set" : ["Good", "WhyNot"]
             },
+            {
+                  "intent": "CanYouHearMe",
+                  "text": [
+                        "Can you hear me?",
+                        "Do you hear me"
+                  ],
+                  "responses": [
+                        "Yes I heard you loud and clear!", 
+                        "Yes I do",
+                        "Yes I can"
+                  ],
+                  "context_set" : ["Good"]
+            },
+      
+
+
             
             {
                   "intent": "HowDoYouKnow",
@@ -818,12 +671,8 @@
                         "I just know",
                         "I read your mind!",
                         "That's right"
-                  ],
-                  "context":  {
-                        "in": [],
-                        "out": [],
-                        "clear": false
-                  }
+                  ], 
+                  "context_filter" : true
             },
             
             {
@@ -837,32 +686,202 @@
                         "That's just life",
                         "It is what it is",
                         "Yeah man sometimes... I don't know why either"
-                  ],
-                  "context":  {
-                        "in": [],
-                        "out": [],
-                        "clear": false
-                  }
+                  ], 
+                  "context_filter" : true
             },
             
             {
-                  "intent": "CanYouHearMe",
+                  "intent": "Wrong",
                   "text": [
-                        "Can you hear me?",
-                        "Do you hear me"
+                  "Wrong!",
+                  "That's a wrong answer"
                   ],
                   "responses": [
-                        "Yes I heard you loud and clear!", 
-                        "Yes I do",
-                        "Yes I can"
+                  "OK fine",
+                  "Oh well"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "WrongName",
+                  "text": [
+                  "Wrong!",
+                  "That's a wrong answer",
+                  "Is not my name",
+                  "That is not my name"
                   ],
-                  "context":  {
-                        "in": [],
-                        "out": [],
-                        "clear": false
-                  }
-            }
+                  "responses": [
+                  "Well I only know a few name",
+                  "Honestly I can't tell by your voice"
+                  ], 
+                  "context_filter" : true
+            },
             
+            {
+                  "intent": "NiceName",
+                  "text": [
+                  "Nice Name!",
+                  "That's a good name",
+                  "Bernard is a good name"
+                  ],
+                  "responses": [
+                  "Thank you, my mom thought so too",
+                  "Thanks! I love my name too",
+                  "Thanks! It means strong and brave"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "IamDoingGoodToo",
+                  "text": [
+                        "I am doing good!",
+                        "I am doing great!",
+                        "I am fine", 
+                        "I am good",
+                        "I'm doing good!",
+                        "I'm doing great!",
+                        "I'm fine", 
+                        "I'm good"
+                  ],
+                  "responses": [
+                  "Glad to hear that!",
+                  "Ok",
+                  "Oh yea"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "HowLong",
+                  "text": [
+                  "How long is this taking you?",
+                  "How long do you need?",
+                  "This is taking a long time"
+                  ],
+                  "responses": [
+                  "Sorry I lost my glasses",
+                  "I can't see clearly!"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "VeryFunny",
+                  "text": [
+                  "Very Funny",
+                  "This is very funny",
+                  "that's funny",
+                  "funny",
+                  "that is funny",
+                  "that is very funny"
+                  ],
+                  "responses": [
+                  "I know...",
+                  "Yea it's funny :D",
+                  "I know right"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "VeryCorny",
+                  "text": [
+                  "Very Corny",
+                  "This is very Corny",
+                  "that's Corny",
+                  "Corny",
+                  "that is Corny",
+                  "that is very Corny"
+                  ],
+                  "responses": [
+                  "I know...",
+                  "Yea it's Corny :D",
+                  "I know right",
+                  "I am not really a good joke teller..."
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "OhReally",
+                  "text": [
+                  "Oh Really?",
+                  "Really?"
+                  ],
+                  "responses": [
+                  "Yea that's true!"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "What",
+                  "text": [
+                  "What",
+                  "What is that"
+                  ],
+                  "responses": [
+                  "Yea...",
+                  "I know right"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "Good",
+                  "text": [
+                  "Good",
+                  "Nice",
+                  "Great",
+                  "Fine",
+                  "That's Good",
+                  "That's Nice",
+                  "That's Great",
+                  "That's Fine"
+                  ],
+                  "responses": [
+                  "yea",
+                  "uh huh"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "WhyNot",
+                  "text": [
+                        "Why",
+                        "Why not",
+                        "Well why not",
+                        "Surely you can",
+                        "Tell me why"
+                  ],
+                  "responses": [
+                        "It's classified, I couldn't tell you!",
+                        "I just don't have the power",
+                        "It's life but not as we know it!",
+                        "System says no!"
+                  ], 
+                  "context_filter" : true
+            },
+            {
+                  "intent": "Interesting",
+                  "text": [
+                  "Interesting!",
+                  "That's very interesting",
+                  "That is very interesting"
+                  ],
+                  "responses": [
+                  "Thanks :D"
+                  ], 
+                  "context_filter" : true
+            },
+            
+            {
+                  "intent": "AreYouGonnaStayHere",
+                  "text": [
+                        "Are you gonna stay here?",
+                        "Are you gonna stay in America?",
+                        "Will you go back to Malaysia?"
+                  ],
+                  "responses": [
+                        "I will probably stay in the U.S. for the rest of my life",
+                        "I will stay in America, but maybe go back to Malaysia once or twice a year"
+                  ], 
+                  "context_filter" : true
+            }
 
       ]
 }

@@ -33,9 +33,9 @@ class ChatBot(Dataset):
     def __len__(self):
         return self.n_samples 
 
-lr = 0.001
+lr = 0.025
 batch_size = 4  
-num_epoch = 200
+num_epoch = 500 
 # dataset = ChatBot()
 # train_loader = DataLoader(dataset=dataset, batch_size=4, shuffle=True)
 input_size = word_count # number of unique words

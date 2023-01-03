@@ -6,8 +6,12 @@ const wordSet = new Set(
     ['{', '`', '"', ']', '-', '/', ':', '!', ')', '@', '\\', '*', '~', '#', '(', '%', '_', '.', '^', ',', '>', '}', '[', '=', '&', '?', '|', '<', '$', ';']
 );
 
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
 function isNumeric(s) {
-    if (s == "1") {
+    if (s === "1") {
         return false
     }
     return !isNaN(s - parseFloat(s));
@@ -41,7 +45,6 @@ function convertSpeech(word_hash, sentence) {
     // convert sentence to 0 and 1 arrays 
     
     let cur_sentence = extract(sentence);
-    console.log("Cur_sentence:",cur_sentence)
     let X = new Array(Object.keys(word_hash).length).fill(0)
     for (let i = 0; i < cur_sentence.length; i++) {
 
@@ -64,15 +67,55 @@ function convertSpeech(word_hash, sentence) {
 // and the value is the list of responses that we gonna respond with 
 async function getResponses() {
     
+    /**
+     * {
+     *   0 : {
+     *      responses: [... ... ...],
+     *      context_set: [31, 33, 35]
+     *   }
+     * }
+     */
     let intents_and_responses = {}
-    training_data = training_data["intents"]
-    // for i, obj in enumerate(training_data["intents"]):
-    let keys = Object.keys(training_data);
-    for (let i = 0; i < keys.length; i++){
+    
+    // find out the indexes of the context
+    // Key: actual string of the context
+    // Index: the index of the context in training_data (a.k.a the order)
+    let context_indexes = {}
 
-        intents_and_responses[keys[i]] = training_data[keys[i]]["responses"];
+    training_data = training_data["intents"]
+    // get the keys 
+    let keys = Object.keys(training_data);
+
+    // first find out the indexes of all the context 
+    // do two passes
+    
+    for (let i = 0; i < keys.length; i++){
+        if (!training_data[keys[i]]["context_filter"]){
+            continue;
+        }
+        context_indexes[training_data[keys[i]]["intent"]] = keys[i]
+
+    }
+
+    for (let i = 0; i < keys.length; i++){
+        let curContextArray = training_data[keys[i]]["context_set"];
+        if (curContextArray){
+            intents_and_responses[keys[i]] = {responses: [], context_set: []}
+            
+            for (let j = 0; j < curContextArray.length; j++) {
+                intents_and_responses[keys[i]]["context_set"].push(context_indexes[curContextArray[j]])
+            }
+            // if i have a context_set in the current entry, I want to 
+            // record it 
+
+        } else {
+            // this is not a context_set but a context_filter instead 
+            intents_and_responses[keys[i]] = {responses: [], context_set: false}
+            
+        }
+        intents_and_responses[keys[i]]["responses"] = training_data[keys[i]]["responses"];
     }
     return intents_and_responses
 }
 
-export {convertSpeech, getResponses};
+export {convertSpeech, getResponses, randomIntFromInterval};

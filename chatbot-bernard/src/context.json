@@ -1,0 +1,216 @@
+
+{
+    "context" : [
+        {
+            "intent": "HowDoYouKnow",
+            "text": [
+                    "How did you know?",
+                    "How do you know?",
+                    "Wow you guessed right!",
+                    "What?",
+                    "Are you reading my mind?"
+            ],
+            "responses": [
+                    "Told you I am smart",
+                    "I just know",
+                    "I read your mind!",
+                    "That's right"
+            ]
+        },
+        
+        {
+            "intent": "Why",
+            "text": [
+                    "Why?",
+                    "Why is that?",
+                    "Why did you say so?"
+            ],
+            "responses": [
+                    "That's just life",
+                    "It is what it is",
+                    "Yeah man sometimes... I don't know why either"
+            ]
+        },
+        
+        {
+            "intent": "Wrong",
+            "text": [
+                "Wrong!",
+                "That's a wrong answer"
+            ],
+            "responses": [
+                "OK fine",
+                "Oh well"
+            ]
+        },
+        {
+            "intent": "WrongName",
+            "text": [
+                "Wrong!",
+                "That's a wrong answer",
+                "Is not my name",
+                "That is not my name"
+            ],
+            "responses": [
+                "Well I only know a few name",
+                "Honestly I can't tell by your voice"
+            ]
+        },
+        
+        {
+            "intent": "NiceName",
+            "text": [
+                "Nice Name!",
+                "That's a good name",
+                "Bernard is a good name"
+            ],
+            "responses": [
+                "Thank you, my mom thought so too",
+                "Thanks! I love my name too",
+                "Thanks! It means strong and brave"
+            ]
+        },
+        {
+            "intent": "IamDoingGoodToo",
+            "text": [
+                "I am doing good!",
+                "I am doing great!",
+                "I am fine", 
+                "I am good",
+                "I'm doing good!",
+                "I'm doing great!",
+                "I'm fine", 
+                "I'm good"
+            ],
+            "responses": [
+                "Glad to hear that!",
+                "Ok",
+                "Oh yea"
+            ]
+        },
+        {
+            "intent": "HowLong",
+            "text": [
+                "How long is this taking you?",
+                "How long do you need?",
+                "This is taking a long time"
+            ],
+            "responses": [
+                "Sorry I lost my glasses",
+                "I can't see clearly!"
+            ]
+        },
+        {
+            "intent": "VeryFunny",
+            "text": [
+                "Very Funny",
+                "This is very funny",
+                "that's funny",
+                "funny",
+                "that is funny",
+                "that is very funny"
+            ],
+            "responses": [
+                "I know...",
+                "Yea it's funny :D",
+                "I know right"
+            ]
+        },
+        {
+            "intent": "VeryCorny",
+            "text": [
+                "Very Corny",
+                "This is very Corny",
+                "that's Corny",
+                "Corny",
+                "that is Corny",
+                "that is very Corny"
+            ],
+            "responses": [
+                "I know...",
+                "Yea it's Corny :D",
+                "I know right",
+                "I'm not really a good joke teller..."
+            ]
+        },
+        {
+            "intent": "OhReally",
+            "text": [
+                "Oh Really?",
+                "Really?"
+            ],
+            "responses": [
+                "Yea that's true!"
+            ]
+        },
+        {
+            "intent": "What",
+            "text": [
+                "What",
+                "What is that"
+            ],
+            "responses": [
+                "Yea...",
+                "I know right"
+            ]
+        },
+        {
+            "intent": "Good",
+            "text": [
+                "Good",
+                "Nice",
+                "Great",
+                "Fine",
+                "That's Good",
+                "That's Nice",
+                "That's Great",
+                "That's Fine"
+            ],
+            "responses": [
+                "yea",
+                "uh huh"
+            ]
+        },
+        {
+            "intent": "WhyNot",
+            "text": [
+                  "Why",
+                  "Why not",
+                  "Well why not",
+                  "Surely you can",
+                  "Tell me why"
+            ],
+            "responses": [
+                  "It's classified, I couldn't tell you!",
+                  "I just don't have the power",
+                  "It's life but not as we know it!",
+                  "System says no!"
+            ]
+        },
+        {
+            "intent": "Interesting",
+            "text": [
+                "Interesting!",
+                "That's very interesting",
+                "That is very interesting"
+            ],
+            "responses": [
+                "Thanks :D"
+            ]
+        },
+        
+        {
+            "intent": "AreYouGonnaStayHere",
+            "text": [
+                  "Are you gonna stay here?",
+                  "Are you gonna stay in America?",
+                  "Will you go back to Malaysia?"
+            ],
+            "responses": [
+                  "I will probably stay in the U.S. for the rest of my life",
+                  "I will stay in America, but maybe go back to Malaysia once or twice a year"
+            ]
+      }
+    ]
+
+}
