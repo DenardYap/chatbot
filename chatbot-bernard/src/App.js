@@ -336,9 +336,10 @@ function App() {
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
-  if (!isMicrophoneAvailable) {
-    // Render some fallback content
-  }
+  // if (!isMicrophoneAvailable) {
+  //   // Render some fallback content
+  //   return <span>Microphone is not available.</span>;
+  // }
   // TODO: Choose whether type or chat
 
   
@@ -350,6 +351,7 @@ function App() {
         <div className=' text-[0.6em]'>Developed and designed by Bernard Yap</div>
         <div className=' text-[0.6em]'>Major update in 1.1: Added context and a few new questions/responses</div>
       </div>
+      {isMicrophoneAvailable ? <></> : <span className='bg-red-600 p-3'>Microphone is not available</span>}
       <div className=''>
 
         <div className='flex justify-center items-center pt-5 relative  '>
